@@ -1,8 +1,5 @@
 # bitcoin halving
-
-def convert(blockReward):
-    satoshi = blockReward*1000000 # satoshi = 0.00000001
-    return satoshi
+from satoshi import convert
 def bitcoin():
     blockReward = 50
     years = 2008
@@ -20,6 +17,10 @@ def bitcoin():
         else: print('Number of block During:',currentBlock,str(numberOfHalv)+'th','₿itcoin halving year:' ,years,'block reward reduced to:',blockReward)
     print('\nTo be continue #Plan₿...')
     return blockReward and years and currentBlock
+
+
+
+
 
 bitcoin()
 

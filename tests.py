@@ -1,28 +1,52 @@
-# bitcoin halving
+import matplotlib.pyplot as plt
+import numpy as np
 
-def convert(bitcoin):
-    satoshi = bitcoin * 1000000
-    return satoshi
+# import matplotlib as plt
+#
+# x = [50,10]
+# y = [1050, 1575, 1837, 1968, 2033.5,2066.25, 2082.625]
+# plt.plot(x,y)
+# plt.ylabel('BTC emission')
+# plt.show()
 
-def bitcoin():
+# def next():
+#     number = 0
+#     list = []
+#     while number <= 800:
+#         number += 21
+#         list.append(number)
+#         plt.plot(list)
+#     plt.ylabel('Numbers:')
+#     plt.show()
+#     return list
+
+x = np.linspace()
+y = 10**x
+
+plt.yscale('log')
+plt.plot(x,y)
+plt.show()
+
+def values():
+    x = []
+    y = []
+    blockReward = 100
     currentBlock = 0
-    blockReward = 50
-    years = 2008
-    numberOfHalv = 0
-    while blockReward >= 0.0002 and years <= 2080 :
-        blockReward = blockReward / 2
-        years += 4
-        numberOfHalv += 1
-        currentBlock += 210000
-        if blockReward < 0.01:
-                print('')
-                print('Number of block During:',currentBlock,str(numberOfHalv)+'th','₿itcoin halving year:',years,'block reward reduced to:',blockReward,'\nsatoshi =',convert(blockReward))
-        else: print('Number of block During:',currentBlock,str(numberOfHalv)+'th','₿itcoin halving year:' ,years,'block reward reduced to:',blockReward)
-    return blockReward and years and currentBlock
-
-bitcoin()
-
-
+    print('')
+    while blockReward >= 0.0002:
+        blockReward /= 2
+        y.append(blockReward)
+        currentBlock += 21000
+        x.append(currentBlock)
+    plt.title('BTC emission')
+    plt.grid()
+    plt.hot()
+    plt.xlabel('Number of block')
+    plt.ylabel('BTC block reward')
+    x = np.linspace(blockReward)
+    y = 10**x
+    plt.plot(x,y)
+    plt.show()
 
 
 
@@ -30,5 +54,3 @@ bitcoin()
 
 
 
-
-print(convert(1))

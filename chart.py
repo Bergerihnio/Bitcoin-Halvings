@@ -1,25 +1,28 @@
 import matplotlib.pyplot as plt
-# plt.plot([1, 2, 3, 4])
-# plt.ylabel('some numbers')
-# plt.show()
+import numpy as np
 
-#
-x = [21, 42, 53, 64,75 ,86 ,107]
-y = [1050, 1575, 1837, 1968, 2033.5,2066.25, 2082.625]
-plt.plot(x,y)
-plt.ylabel('BTC emission')
-plt.show()
+def values():
+    x = []
+    y = []
+    blockReward = 100
+    currentBlock = 0
+    print('')
+    while blockReward >= 0.0002:
+        blockReward /= 2
+        y.append(blockReward)
+        currentBlock += 21000
+        x.append(currentBlock)
+    plt.title('BTC emission')
+    plt.grid()
+    plt.xlabel('Number of block')
+    plt.ylabel('BTC block reward')
+    plt.plot(x, y)
+    plt.show()
 
-# def next():
-#     number = 0
-#     list = []
-#     while number <= 800:
-#         number += 21
-#         list.append(number)
-#         plt.plot(list)
-#     plt.ylabel('Numbers:')
-#     plt.show()
-#     return list
+values()
+
+
+
 
 
 
